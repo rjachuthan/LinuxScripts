@@ -1,0 +1,7 @@
+#!/bin/sh
+
+sudo sleep 0.1
+xflock4
+sleep 3
+echo deep | sudo tee /sys/power/mem_sleep
+echo mem | sudo tee /sys/power/state

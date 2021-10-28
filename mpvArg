@@ -1,0 +1,18 @@
+#!/bin/bash
+# originally by Kris Occhipinti
+# https://www.youtube.com/watch?v=FsQuGplQvrw
+
+# link=$(xclip -o)
+link=$1
+
+TITLE=$(youtube-dl --get-title "$link")
+
+if [[ $link == *"youtube"* ]]; then
+  notify-send -t 3000 --app-name="YouTube" "Playing Video" "$TITLE";
+  # mpv --ytdl-format="[height<=?1080]" --speed=2 --af=rubberband=pitch-scale=0.981818181818181 "$link"
+  mpv --ytdl-format="[height<=?1080]" --speed=1.65 "$link"
+else
+  notify-send -t 3000 --app-name="MPV" "Playing Video" "$TITLE";
+  mpv --speed=1 "$link"
+fi
+

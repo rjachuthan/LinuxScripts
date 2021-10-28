@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# Import the colors.
+. "${HOME}/.cache/wal/colors.sh"
+
+# Original code: nemanjan00
+# Link: https://gist.github.com/nemanjan00/cb27ac9814c55fd5b98979042ede7db8
+# Edited by: github.com/rjachuthan
+
+LIBRARY="$HOME/Documents/Books/"
+
+function display() {
+  books=$(find $LIBRARY | grep "\.epub\|\.pdf")
+  books=${books//$LIBRARY/"~"}
+
+  line=$(echo "$books" | dmenu -l 15 -i -p "Book: " -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15")
+
+  exit_code=$?
+
+  line="${line/\~/$LIBRARY}"
+
+  if [ $exit_code == 0 ]; then
+    zathura "${line}"
+    echo "$line"
+  fi
+}
+
+display
