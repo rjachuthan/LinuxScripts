@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
-
-# Import the colors.
-. "${HOME}/.cache/wal/colors.sh"
-
 # Original code: nemanjan00
 # Link: https://gist.github.com/nemanjan00/cb27ac9814c55fd5b98979042ede7db8
 # Edited by: github.com/rjachuthan
+
+# Import the colors.
+. "${HOME}/.cache/wal/colors.sh"
 
 LIBRARY="$HOME/Documents/Books/"
 

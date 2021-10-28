@@ -1,8 +1,6 @@
 #!/bin/bash
 
-display_player_prefix=( "spotify:"
-                        "firefox:"
-                        "mpv:" )
+display_player_prefix=( "spotify:" "firefox:" "mpv:" )
 
 STATUS=""
 TITLE=""
