@@ -2,7 +2,11 @@
 # Stream audio and video from lofi hip hop radio
 
 url='https://youtu.be/5qap5aO4i9A'
-quality=92
 title='lofi hip hop radio'
 
-youtube-dl -f $quality -o - "$url" | ffplay -window_title "$title" -i -
+# ffplay seems to be lagging on my machine
+# quality=92
+# youtube-dl -f $quality -o - "$url" | ffplay -window_title "$title" -i -
+
+notify-send -t 3000 --app-name="$title" "Now Playing"
+mpv --speed=1 --ytdl-format="[height<=?800]" "$url"
