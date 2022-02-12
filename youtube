@@ -9,8 +9,8 @@ else
   LINK=$1
 fi
 
-# TITLE=$(youtube-dl --get-title "$LINK")
-TITLE="Playing Video"
+TITLE=$(youtube-dl --get-title "$LINK")
+# TITLE="Playing Video"
 notify-send -t 3000 --app-name="MPV" "Playing Video" "$TITLE";
 mpv --script=~/.config/mpv/scripts/mpris.so --ytdl-format="[height<=?1080]" --speed=1.65 "$LINK" &
 
