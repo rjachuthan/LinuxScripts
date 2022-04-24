@@ -6,7 +6,7 @@
 # Import the colors.
 . "${HOME}/.cache/wal/colors.sh"
 
-LIBRARY="$HOME/Documents/Books/"
+LIBRARY="$HOME/Documents/"
 
 function display() {
   books=$(find $LIBRARY | grep "\.epub\|\.pdf")
