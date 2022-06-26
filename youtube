@@ -10,10 +10,7 @@ else
 fi
 
 TITLE=$(youtube-dl --get-title "$LINK")
-# TITLE="Playing Video"
-notify-send -t 3000 --app-name="MPV" "Playing Video" "$TITLE";
-mpv --script=~/.config/mpv/scripts/mpris.so --ytdl-format="[height<=?1080]" --speed=1.65 "$LINK" &
-
-# TITLE=$(playerctl --player mpv metadata -f "{{xesame:title}}")
 # notify-send -t 3000 --app-name="MPV" "Playing Video" "$TITLE";
+dunstify -t 3000 -u low -i multimedia-video-player -a "MPV" "Playing Video" "$TITLE";
+mpv --script=~/.config/mpv/scripts/mpris.so --ytdl-format="[height<=?1080]" --speed=1.65 "$LINK" &
 
